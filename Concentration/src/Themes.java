@@ -3,8 +3,9 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Themes
-
+	
 	{
+
 	static ArrayList<String> loader = new ArrayList<String>();
 	static int theme;
 	
@@ -23,16 +24,24 @@ public class Themes
 	static String names [] = {"Lisa", "Lisa", "Mary", "Mary", "Bill", "Bill", "Suzy", "Suzy",
 			"Jeff", "Jeff", "John", "John", "Emma", "Emma", "Dave", "Dave"};
 	
+
+	static ArrayList<String> loader = new ArrayList<String>();
+	static String [][] layoutAnswers = new String [4] [4];
+	
+	public static void setupAnswers()
+		{
+		chooseTheme();
+		shuffle();
+		loadCards();
+		}
+	
 	public static void chooseTheme()
 		{
 		System.out.println("Which theme would you like to play with?");
-		System.out.println("(1)  animals");
-		System.out.println("(2)  food");
-		System.out.println("(3)  places");
-		System.out.println("(4)  body parts");
-
+		System.out.println("(1) animals  (2) food  (3) places  (4) body parts  (5) names");
 		Scanner input = new Scanner(System.in);
-		theme = input.nextInt();
+		int theme = input.nextInt();
+
 		switch(theme)
 			{
 			case 1:
@@ -40,46 +49,65 @@ public class Themes
 				for(String array : animals)
 					{
 					loader.add(array);
-					break;
 					}
+				break;
+
 				}
 			case 2:
 				{
 				for(String array : food)
 					{
 					loader.add(array);
-					break;
 					}
+				break;
 				}
 			case 3:
 				{
 				for(String array : places)
 					{
-					loader.add(array); 
-					break;
+					loader.add(array);
 					}
+				break;
 				}
 			case 4:
 				{
 				for(String array : bodyParts)
 					{
 					loader.add(array);
-					break;
 					}
+				break;
 				}
 			case 5:
+			for(int i = 0; i < 8; i++)
 				{
 				for(String array : names)
 					{
 					loader.add(array);
-					break;
+
 					}
+				break;
+
 				}
 			}
 		}
 	
-	public static void shuffleTerms()
+
+	public static void shuffle()
 		{
 		Collections.shuffle(loader);	
 		}
+	
+	public static void loadCards()
+		{
+		int counter = 0;
+		for(int i=0;i<4;i++)
+			{
+			for(int j=0;j<4;j++)
+				{
+				layoutAnswers[i][j] = loader.get(counter);
+				counter++;
+				}
+			}
+		}
+
 	}
