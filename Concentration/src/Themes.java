@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class Themes
 	
 	{
+
+	static ArrayList<String> loader = new ArrayList<String>();
+	static int theme;
+	
 	static String animals [] = {"deer", "deer", "puma", "puma", "wolf", "wolf", "lion", 
 			"lion", "vole", "vole", "duck", "duck", "frog", "frog", "bird", "bird"};
 	
@@ -20,6 +24,7 @@ public class Themes
 	static String names [] = {"Lisa", "Lisa", "Mary", "Mary", "Bill", "Bill", "Suzy", "Suzy",
 			"Jeff", "Jeff", "John", "John", "Emma", "Emma", "Dave", "Dave"};
 	
+
 	static ArrayList<String> loader = new ArrayList<String>();
 	static String [][] layoutAnswers = new String [4] [4];
 	
@@ -36,6 +41,7 @@ public class Themes
 		System.out.println("(1) animals  (2) food  (3) places  (4) body parts  (5) names");
 		Scanner input = new Scanner(System.in);
 		int theme = input.nextInt();
+
 		switch(theme)
 			{
 			case 1:
@@ -45,6 +51,7 @@ public class Themes
 					loader.add(array);
 					}
 				break;
+
 				}
 			case 2:
 				{
@@ -76,12 +83,15 @@ public class Themes
 				for(String array : names)
 					{
 					loader.add(array);
+
 					}
 				break;
+
 				}
 			}
 		}
 	
+
 	public static void shuffle()
 		{
 		Collections.shuffle(loader);	
@@ -99,4 +109,5 @@ public class Themes
 				}
 			}
 		}
+
 	}

@@ -8,6 +8,7 @@ public class PlayGame
 
 	public static void main(String[] args)
 		{
+
 		Themes.setupAnswers();
 		Layout.createBlankLayout();
 		Layout.display();
@@ -18,6 +19,7 @@ public class PlayGame
 			Choosing.compareChoices();
 			}
 		displayScore();
+
 		}
 	
 	public static void displayScore()
